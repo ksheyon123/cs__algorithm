@@ -5,6 +5,9 @@
 
 /*
 Q. 1 ~ 10까지의 정렬된 수에서 target을 찾는 함수를 구하시오.
+
+startIdx = 0;
+lastIdx = nums.length - 1;
 **/
 
 
@@ -14,6 +17,7 @@ const binarySearch = (nums, target) => {
   let m = 0;
   let iteration = 0;
   while (startIdx <= lastIdx) {
+    ++iteration;
     m = Math.floor((startIdx + lastIdx) / 2);
     if (nums[m] < target) {
       startIdx = m + 1;
@@ -23,9 +27,8 @@ const binarySearch = (nums, target) => {
       console.log("iteration : ", iteration, " idx : ", m);
       return m;
     }
-    iteration++;
   }
 }
 
-binarySearch([1, 2, 3, 4, 5, 6], 1);
+binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 9);
 
